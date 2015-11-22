@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         Thread t = new Thread() {
-
             @Override
             public void run() {
                 try {
@@ -69,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
 
         txtCounter = (TextView) findViewById(R.id.counter);
         txtCounter.setText(String.valueOf(intValue));
+
+        useAppNotify.notify(getApplicationContext(), "Você já usou o celular " + intValue + " vezes!", 0);
+
     }
 
     @Override
